@@ -10,13 +10,13 @@
 
 >> #### we can specify parameters to narrow down the search, for example setting CITIES, SALARY, etc.
 
-![Image text](https://github.com/Blackoutzc/jobcollection/tree/master/pics/capture_setting.PNG)
+![Image text](https://github.com/Blackoutzc/jobcollection/blob/master/pics/capture_setting.PNG)
 
 ## result display 
 
-![Image text](https://github.com/Blackoutzc/jobcollection/tree/master/pics/capture.PNG) <br />
+![Image text](https://github.com/Blackoutzc/jobcollection/blob/master/pics/capture.PNG) <br />
 
-![Image text](https://github.com/Blackoutzc/jobcollection/tree/master/pics/MySQL_snapshot.PNG)
+![Image text](https://github.com/Blackoutzc/jobcollection/blob/master/pics/MySQL_snapshot.PNG)
 
 ## usage
 
