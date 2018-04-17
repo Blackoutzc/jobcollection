@@ -4,8 +4,8 @@ from jobcollection.items import JobcollectionItem
 import scrapy
 import requests
 from scrapy.selector import Selector
-import jobparameters.cities as cities
-import jobparameters.releasedate as release
+#import jobparameters.cities as cities
+#import jobparameters.releasedate as release
 from . import urlfactory
 import jobcollection.usersetting as usersetting
 reload(sys)
