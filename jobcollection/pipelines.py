@@ -10,12 +10,15 @@ from mysqlinterface import SqlInterface
 import youdaotranslation
 import datetime
 
-workbook = Workbook()
-worksheet = workbook.active
-worksheet.append((u"职位名", u"公司名", u"工作地点", u"薪资", u"发布时间", u"公司性质", u"规模", u"分类"))
-
 
 class JobcollectionPipeline(object):
+    def __init__(self):
+        self._output_base_name = None
+        self._db, self._mysql_object, self._cursor = None, None, None
+        self._workbook = Workbook()
+        self._worksheet = self._workbook.active
+        self._worksheet.append((u"职位名", u"公司名", u"工作地点", u"薪资", u"发布时间", u"公司性质", u"规模", u"分类"))
+
     @staticmethod
     def construct_output_name():
         """
@@ -54,9 +57,9 @@ class JobcollectionPipeline(object):
 
     def process_item(self, item, spider):
         company_info = self.handle_some_stuff(item["company_info"])
-        worksheet.append([item["job"], item["company"], item["location"],
-                          item["salary"], item["release_date"]] + company_info)
-        if hasattr(self, "_cursor"):
+        self._worksheet.append([item["job"], item["company"], item["location"],
+                                item["salary"], item["release_date"]] + company_info)
+        if self._cursor is not None:
             current_year = datetime.datetime.now().strftime("%Y")
             try:
                 self._cursor.execute("insert into {name} (job, company, location, salary, release_date,"
@@ -83,6 +86,6 @@ class JobcollectionPipeline(object):
         return temp
 
     def close_spider(self, spider):
-        workbook.save(self._output_base_name + ".xlsx")
-        if hasattr(self, "_mysql_object"):
+        self._workbook.save(self._output_base_name + ".xlsx")
+        if self._mysql_object is not None:
             self._mysql_object.close()

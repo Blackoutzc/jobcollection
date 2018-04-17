@@ -3,7 +3,7 @@ from jobparameters import cities, coltype, companysize, degree
 from jobparameters import salary, releasedate, workyear
 """
 if we don't want to use mysql, set USE_MYSQL = 0, else set USE_MYSQL = 1
-if we want to save data into database, we must provide PASSWD and DATABASE,
+if we want to save data into database, then PASSWD and DATABASE is a must,
 and DATABASE should be existed in MySQL
 """
 
@@ -28,8 +28,8 @@ if we uncomment an item, it will search the aspect by default,
 for example, if we uncomment WORK_YEAR, then WORK_YEAR will not be a limitation to
 our result
 """
-CITIES = [cities.WUXI, cities.ZHENGJIANG, cities.SHANGHAI]
-CONTENT = "编程"
+#CITIES = [cities.WUXI, cities.ZHENGJIANG, cities.SHANGHAI]
+CONTENT = "技术支持"
 #WORK_YEAR = workyear.ONE_THREE_YEAR
 #COMPANY_TYPE = coltype.FOREIGN_CAPITAL_AE
 #DEGREE_FROM = degree.BACHELOR
